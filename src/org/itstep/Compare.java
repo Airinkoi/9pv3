@@ -18,7 +18,19 @@ public class Compare {
         players.add(new Player("Player5", 21456));
         players.add(new Player("Player6", 8329444));
 
-        Collections.sort(players, new PlayerComparator());
+
+        Collections.sort(players, new Comparator<Player>() {
+            @Override
+            public int compare(Player p1, Player p2) {
+                if(p1.getScore() > p2.getScore())
+                    return 1;
+                else if (p1.getScore() < p2.getScore())
+                    return -1;
+                else
+                    return 0;
+            }
+        });
+
 
         for (Player player : players) {
             System.out.println(player.getNickName() + ": " + player.getScore());
