@@ -9,12 +9,10 @@ import java.util.List;
  * Created by Вадим on 30.09.2015.
  */
 public class Player {
-    List<PlayerObserver> observers = new LinkedList<>();
+    private List<PlayerObserver> observers = new LinkedList<>();
     private int x = 0, y = 0, speed = 0, dir = 0;
 
-    public void move(int x, int y, int speed, int dir) {
-        this.x = x;
-        this.y = y;
+    public void move(int speed, int dir) {
         this.speed = speed;
         this.dir = dir;
 
