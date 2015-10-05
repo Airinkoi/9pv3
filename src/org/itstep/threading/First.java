@@ -1,9 +1,16 @@
 package org.itstep.threading;
 
 public class First {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
+        // Runnable
         Thread thread = new Thread(new CounterRunnable());
+
+        // Thread
+        CounterThread thread2 = new CounterThread(10, 20);
+
         thread.start();
+        thread.join();
+        thread2.start();
     }
 }
 
@@ -35,7 +42,7 @@ class CounterThread extends Thread {
         for (int i = this.from; i < this.to; i++) {
             try {
                 Thread.currentThread().sleep(100);
-                System.out.println(i);
+                System.out.println("Thread counter: " + i);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
