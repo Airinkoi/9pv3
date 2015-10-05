@@ -22,23 +22,28 @@ public class DataManager {
             }
         });
 
-        thread1.start();
+        thread2.setName("Sender");
         thread2.start();
+        thread1.setName("Preparator");
+        thread1.start();
     }
 
     private volatile static ArrayList<Integer> list = new ArrayList();
+    private volatile static boolean prepared = false;
 
     public static void sendData() {
         synchronized (list) {
-            System.out.println("Waiting for prepared data...");
 
-            try {
-                list.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            while(!prepared) {
+                System.out.println(Thread.currentThread().getName() + ": Waiting for prepared data...");
+                try {
+                    list.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
             }
 
-            System.out.println("Data sending...");
+            System.out.println(Thread.currentThread().getName() + ": Data sending...");
             System.out.println(list.toString());
         }
     }
@@ -48,7 +53,8 @@ public class DataManager {
             for (int i = 0; i < 100000; i++) {
                 list.add(i);
             }
-            System.out.println("Data prepared.");
+            System.out.println(Thread.currentThread().getName() + ": Data prepared.");
+            prepared = true;
             list.notifyAll();
         }
     }
