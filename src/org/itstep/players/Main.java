@@ -1,11 +1,16 @@
 package org.itstep.players;
 
+import java.util.Vector;
+
 /**
  * Created by Вадим on 30.09.2015.
  */
 public class Main {
     public static void main(String[] args) {
         Player p = new Player();
+
+        PlayersList list = new PlayersList();
+        list.add(p);
 
         p.addListener(new PlayerObserver() {
             @Override
