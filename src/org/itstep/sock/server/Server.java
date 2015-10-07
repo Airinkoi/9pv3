@@ -23,7 +23,7 @@ public class Server {
         }
     }
 
-    private static void sendToAll(String message) {
+    public static void sendToAll(String message) {
         for(ClientSocketListener client : clients) {
             client.send(message);
         }
