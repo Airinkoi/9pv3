@@ -7,6 +7,7 @@ public class Client {
     public static void main(String[] args) {
         try {
             Socket server = new Socket("localhost", 5555);
+            ServerSocketListener listener = new ServerSocketListener(server);
             BufferedReader console = new BufferedReader(new InputStreamReader(System.in));
             String text = "";
             while(!text.equals("-close")) {

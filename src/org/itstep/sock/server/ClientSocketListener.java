@@ -31,6 +31,7 @@ public class ClientSocketListener extends Thread {
 
     public void send(String message) {
         try {
+            System.out.println("Sending ti client");
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             out.println(message);
         } catch (IOException e) {
