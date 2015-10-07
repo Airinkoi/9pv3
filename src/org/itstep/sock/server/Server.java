@@ -11,6 +11,7 @@ public class Server {
             while(true) {
                 System.out.println("Waiting for client");
                 Socket clientSocket = ss.accept();
+                ClientSocketListener listener = new ClientSocketListener(clientSocket);
                 System.out.println("New user connected");
             }
         } catch (IOException e) {
