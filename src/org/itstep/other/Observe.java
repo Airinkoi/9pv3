@@ -1,4 +1,4 @@
-package org.itstep;
+package org.itstep.other;
 
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;

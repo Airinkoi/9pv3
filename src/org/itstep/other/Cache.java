@@ -1,4 +1,4 @@
-package org.itstep;
+package org.itstep.other;
 
 public class Cache {
     public static void main(String[] args) {

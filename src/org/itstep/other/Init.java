@@ -1,4 +1,4 @@
-package org.itstep;
+package org.itstep.other;
 
 /**
  * Created by Вадим on 28.09.2015.

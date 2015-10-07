@@ -1,7 +1,4 @@
-package org.itstep;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
+package org.itstep.other;
 
 public class Nesting {
     public static void main(String[] args) {

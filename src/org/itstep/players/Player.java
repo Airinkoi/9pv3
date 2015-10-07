@@ -1,7 +1,5 @@
 package org.itstep.players;
 
-import org.itstep.Observe;
-
 import java.util.LinkedList;
 import java.util.List;
 

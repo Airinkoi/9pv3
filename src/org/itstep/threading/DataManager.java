@@ -22,6 +22,8 @@ public class DataManager {
             }
         });
 
+        thread1.suspend();
+
         thread2.setName("Sender");
         thread2.start();
         thread1.setName("Preparator");
