@@ -16,9 +16,9 @@ public class ClientSocketListener extends Thread {
     @Override
     public void run() {
         try {
+            System.out.println("Listening for client");
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             while(true) {
-                System.out.println("Listening for client");
                 String text = in.readLine();
                 System.out.println(text);
             }

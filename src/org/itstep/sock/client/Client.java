@@ -11,8 +11,8 @@ public class Client {
             String text = "";
             while(!text.equals("-close")) {
                 text = console.readLine();
-                BufferedWriter out = new BufferedWriter(new OutputStreamWriter(server.getOutputStream()));
-                out.write(text);
+                PrintWriter out = new PrintWriter(server.getOutputStream(), true);
+                out.println(text);
             }
             server.close();
         } catch (IOException e) {
